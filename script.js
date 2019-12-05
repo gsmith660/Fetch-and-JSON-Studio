@@ -4,6 +4,7 @@ window.addEventListener("load", function() {
         response.json().then(function(json) {
             let h1 = document.querySelector('h1');
             h1.innerHTML = `${json.length} ` + h1.innerHTML;
+            json.sort((a, b) => b.hoursInSpace - a.hoursInSpace);
             let htmlToAdd = '';
             for (let i in json) {
                 let data = json[i];
